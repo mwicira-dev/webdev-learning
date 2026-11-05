@@ -1,79 +1,85 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arcadia Login</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="page-shell">
-      <div class="login-card">
-        <aside class="brand-panel">
-          <div class="brand-row">
-            <div class="brand-mark">A</div>
-            <span class="brand-name">Arcadia</span>
-          </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Website</title>
 
-          <div class="brand-copy">
-            <p class="eyebrow">A better way to work</p>
-            <h1>Welcome back</h1>
-            <p class="subtitle">
-              Sign in to manage your projects, track performance, and stay on top of your day.
-            </p>
-          </div>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-          <ul class="feature-list">
-            <li>Smart project dashboards</li>
-            <li>Team collaboration in one place</li>
-            <li>Daily insights and productivity tools</li>
-          </ul>
-        </aside>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <h2>MyWebsite</h2>
 
-        <main class="form-panel">
-          <div class="switcher" aria-label="Authentication tabs">
-            <span class="active">Sign in</span>
-            <span>Create account</span>
-          </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-          <div class="form-header">
-            <h2>Login to your account</h2>
-            <p>Use your email and password to continue.</p>
-          </div>
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <h1>Welcome to My Website</h1>
+        <p>We provide quality services and amazing experiences.</p>
+        <a href="#about" class="btn">Learn More</a>
+    </section>
 
-          <form class="login-form">
-            <label class="field">
-              <span>Email address</span>
-              <input type="email" placeholder="you@example.com" />
-            </label>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
 
-            <label class="field">
-              <span>Password</span>
-              <input type="password" placeholder="Enter your password" />
-            </label>
+        <p>
+            We are a passionate team dedicated to providing
+            quality services and creating positive experiences
+            for our customers.
+        </p>
+    </section>
 
-            <div class="meta-row">
-              <label class="check-wrap">
-                <input type="checkbox" />
-                <span>Remember me</span>
-              </label>
-              <a href="#">Forgot password?</a>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What People Say</h2>
+
+        <div class="testimonial-container">
+
+            <div class="testimonial-card">
+                <p>"Amazing service! I really enjoyed working
+                with this team."</p>
+                <h3>John Doe</h3>
             </div>
 
-            <button type="submit" class="primary-btn">Sign in</button>
-
-            <div class="divider"><span>or continue with</span></div>
-
-            <div class="social-row">
-              <button type="button" class="social-btn">Google</button>
-              <button type="button" class="social-btn">GitHub</button>
+            <div class="testimonial-card">
+                <p>"Very professional and helpful.
+                Highly recommended!"</p>
+                <h3>Jane Smith</h3>
             </div>
-          </form>
-        </main>
-      </div>
-    </div>
-  </body>
+
+            <div class="testimonial-card">
+                <p>"A wonderful experience. I will definitely
+                come back again."</p>
+                <h3>Peter James</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <h2>MyWebsite</h2>
+        <p>Email: info@mywebsite.com</p>
+        <p>Phone: +250 788 000 000</p>
+
+        <p class="copyright">
+            &copy; 2026 MyWebsite. All rights reserved.
+        </p>
+    </footer>
+
+</body>
 </html>
+
+  <a href="#about">About</a>
+  
