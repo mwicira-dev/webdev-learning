@@ -14,18 +14,10 @@
     <nav class="navbar">
         <h2>MyWebsite</h2>
 
-        <button class="menu-toggle" type="button" aria-label="Open navigation menu"
-            aria-expanded="false" aria-controls="main-navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <ul id="main-navigation">
+        <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#login">Login</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -38,7 +30,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
+    <section id="about" class="about">
         <h2>About Us</h2>
 
         <p>
@@ -48,110 +40,108 @@
         </p>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <h2>What People Say</h2>
-
-        <div class="testimonial-container">
-
-            <div class="testimonial-card">
-                <p>"Amazing service! I really enjoyed working
-                with this team."</p>
-                <h3>Mwicira honore</h3>
+      <section class="section news-section" id="news">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-mark"></span> IBIHANGAYIKISHIJE UYU MUNSI</div>
+              <h2>Amakuru <span>agezweho.</span></h2>
+              <p>Menya ibiri kubera muri siporo y’amashuri ya Nyanza.</p>
             </div>
 
             <div class="testimonial-card">
                 <p>"Very professional and helpful.
                 Highly recommended!"</p>
-                <h3>eloi</h3>
+                <h3>Jane Smith</h3>
             </div>
+            <div class="competition-list" id="competition-list"></div>
+            <p class="competition-footnote">* Gahunda n’amatariki byemezwa n’abategura amarushanwa.</p>
+          </div>
+        </div>
+      </section>
 
-            <div class="testimonial-card">
-                <p>"A wonderful experience. I will definitely
-                come back again."</p>
-                <h3>Peter James</h3>
+      <section class="section sports-section" id="sports">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-mark"></span> SHAKA UMUKINO WAWE</div>
+              <h2>Imikino itandukanye.<br /><span>Intego imwe.</span></h2>
             </div>
+            <p class="heading-aside">Siporo ifasha abanyeshuri kugira ubuzima bwiza, gukorera hamwe no kumenya guhatana mu buryo bwiza.</p>
+          </div>
+          <div class="sports-grid">
+            <a class="sport-card sport-football" href="#news" data-sport-filter="football">
+              <span class="sport-number">01 / IMIKINO</span><span class="sport-arrow" aria-hidden="true">↗</span>
+              <div><h3>Umupira<br />w’amaguru</h3><span class="sport-discover">Menya byinshi <b>→</b></span></div>
+            </a>
+            <a class="sport-card sport-volleyball" href="#news" data-sport-filter="volleyball">
+              <span class="sport-number">02 / IMIKINO</span><span class="sport-arrow" aria-hidden="true">↗</span>
+              <div><h3>Volley-<br />ball</h3><span class="sport-discover">Menya byinshi <b>→</b></span></div>
+            </a>
+            <a class="sport-card sport-basketball" href="#news" data-sport-filter="basketball">
+              <span class="sport-number">03 / IMIKINO</span><span class="sport-arrow" aria-hidden="true">↗</span>
+              <div><h3>Basket-<br />ball</h3><span class="sport-discover">Menya byinshi <b>→</b></span></div>
+            </a>
+            <a class="sport-card sport-athletics" href="#news" data-sport-filter="athletics">
+              <span class="sport-number">04 / IMIKINO</span><span class="sport-arrow" aria-hidden="true">↗</span>
+              <div><h3>Imikino<br />ngororamubiri</h3><span class="sport-discover">Menya byinshi <b>→</b></span></div>
+            </a>
+          </div>
+        </div>
+      </section>
 
+      <section class="about-section" id="about">
+        <div class="about-image" role="img" aria-label="Abanyeshuri bari mu myitozo ya siporo"></div>
+        <div class="about-copy">
+          <div class="eyebrow eyebrow-light"><span class="eyebrow-mark"></span> AHO DUKOMOKA</div>
+          <h2>Siporo ni irerero<br />ry’ejo <span>hazaza.</span></h2>
+          <p>OPSS Nyanza ni urubuga ruhuza umuryango wa siporo mu mashuri. Dusangiza amakuru, ibikorwa n’ibyishimo by’abanyeshuri, abarezi n’abatoza.</p>
+          <p class="about-quote">“Iyo dukinnye hamwe, dukura hamwe.”</p>
+          <a class="text-link text-link-light" href="#contact">Duhurire hamwe <span aria-hidden="true">↗</span></a>
         </div>
     </section>
 
-    <!-- Login Demo -->
-    <section id="login" class="login-section">
-        <h2>Login</h2>
-        <form class="login-form">
-            <label for="login-email">Email</label>
-            <input id="login-email" name="email" type="email"
-                placeholder="you@example.com" autocomplete="email" required>
+      <section class="contact-section" id="contact">
+        <div class="container contact-layout">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-mark"></span> TUGANIRE</div>
+            <h2>Ufite inkuru?<br /><span>Twandikire.</span></h2>
+            <p>Ohereza ubutumwa bugufi ku buyobozi bwa OPSS Nyanza. Tumenyeshe amakuru, irushanwa cyangwa igitekerezo ufite.</p>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <label for="contact-name">Amazina yawe</label>
+            <input id="contact-name" name="name" type="text" placeholder="Andika amazina yawe" required />
+            <label for="contact-category">Ubutumwa bujyanye na</label>
+            <select id="contact-category" name="category" required>
+              <option value="" disabled selected>Hitamo ubwoko bw’ubutumwa</option>
+              <option>Amakuru ya siporo</option>
+              <option>Irushanwa</option>
+              <option>Ikindi gitekerezo</option>
+            </select>
+            <label for="contact-message">Ubutumwa bugufi</label>
+            <textarea id="contact-message" name="message" rows="3" placeholder="Andika ubutumwa bwawe..." required></textarea>
+            <button class="button button-dark" type="submit">Bika ubutumwa <span aria-hidden="true">→</span></button>
+            <p class="form-feedback" id="form-feedback" role="status"></p>
+            <p class="form-note" id="contact-note">Ubutumwa bwoherezwa ku buyobozi iyo urubuga rwashyizwe kuri Supabase.</p>
+          </form>
+        </div>
+      </section>
+    </main>
 
-            <label for="login-password">Password</label>
-            <input id="login-password" name="password" type="password"
-                placeholder="Enter your password" autocomplete="current-password" required>
-
-            <button type="submit">Login</button>
-            <p class="login-message" role="status" aria-live="polite"></p>
-        </form>
-        <p class="login-note">Learning demo only. It does not sign you in or save your details.</p>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <h2>MyWebsite</h2>
-        <p>Email: info@mywebsite.com</p>
-        <p>Phone: +250 788 000 000</p>
-
-        <p class="copyright">
-            &copy; 2026 MyWebsite. All rights reserved.
-        </p>
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <a class="brand footer-brand" href="#home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 3 43 14v20L24 45 5 34V14L24 3Z" stroke="currentColor" stroke-width="2" /><path d="m14 29 6-14 5 11 4-7 5 10M13 34h22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+          <span class="brand-copy"><strong>OPSS</strong><small>NYANZA · RWANDA</small></span>
+        </a>
+        <p>Gukina. Kwiga. Gukura.<br />Siporo y’amashuri, ejo hazaza heza.</p>
+        <a class="back-top" href="#home">Subira hejuru ↑</a>
+      </div>
+      <div class="container footer-bottom"><span>© <span id="current-year"></span> OPSS Nyanza</span><span>Urubuga rw’umuryango wa siporo mu mashuri.</span><a class="footer-admin-link" href="admin.html">Admin</a></div>
     </footer>
-    <script>
-        const navbar = document.querySelector(".navbar");
-        const menuToggle = document.querySelector(".menu-toggle");
-        const navigation = document.querySelector("#main-navigation");
-
-        function closeMenu() {
-            navbar.classList.remove("is-open");
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.setAttribute("aria-label", "Open navigation menu");
-        }
-
-        menuToggle.addEventListener("click", () => {
-            const isOpen = navbar.classList.toggle("is-open");
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
-            menuToggle.setAttribute(
-                "aria-label",
-                isOpen ? "Close navigation menu" : "Open navigation menu"
-            );
-        });
-
-        navigation.addEventListener("click", (event) => {
-            if (event.target.closest("a")) {
-                closeMenu();
-            }
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape" && navbar.classList.contains("is-open")) {
-                closeMenu();
-                menuToggle.focus();
-            }
-        });
-
-        window.addEventListener("resize", () => {
-            if (window.innerWidth > 768) {
-                closeMenu();
-            }
-        });
-
-        const loginForm = document.querySelector(".login-form");
-        const loginMessage = document.querySelector(".login-message");
-
-        loginForm.addEventListener("submit", (event) => {
-            event.preventDefault();
-            loginMessage.textContent =
-                "This is a demo: no account was checked and no details were saved.";
-            loginForm.reset();
-        });
-    </script>
 
 </body>
 </html>
+
+  <a href="#about">About</a>
+  
