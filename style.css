@@ -19,6 +19,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation: slideDown 0.7s ease-out both;
 }
 
 .navbar ul {
@@ -27,9 +28,38 @@ body {
     gap: 25px;
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar.is-open .menu-toggle span:first-child {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navbar.is-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar.is-open .menu-toggle span:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 .navbar a {
     color: white;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .navbar a:hover {
@@ -46,10 +76,12 @@ body {
 .home h1 {
     font-size: 40px;
     color: #14213d;
+    animation: fadeInUp 0.8s ease-out backwards;
 }
 
 .home p {
     margin: 15px 0 25px;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
 .btn {
@@ -58,6 +90,17 @@ body {
     padding: 12px 25px;
     text-decoration: none;
     border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.4s ease, color 0.4s ease,
+        transform 0.4s ease, box-shadow 0.4s ease;
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.btn:hover {
+    background-color: #14213d;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* About Section */
@@ -71,12 +114,14 @@ body {
     font-size: 30px;
     margin-bottom: 20px;
     color: #14213d;
+    animation: fadeInUp 0.8s ease-out both;
 }
 
 .about p {
     max-width: 650px;
     margin: auto;
     color: #555;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
 /* Testimonials */
@@ -98,11 +143,98 @@ body {
     border-radius: 10px;
     flex: 1;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    animation: fadeInUp 0.8s ease-out backwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.testimonial-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.15);
 }
 
 .testimonial-card h3 {
     margin-top: 15px;
     color: #fca311;
+}
+
+/* Login Demo */
+.login-section {
+    padding: 70px 20px;
+    background-color: #e5e5e5;
+    text-align: center;
+}
+
+.login-section h2 {
+    margin-bottom: 20px;
+    color: #14213d;
+    font-size: 30px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.login-form label {
+    color: #14213d;
+    font-weight: bold;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font: inherit;
+}
+
+.login-form input:focus {
+    border-color: #14213d;
+    outline: 2px solid #fca311;
+}
+
+.login-form button {
+    margin-top: 8px;
+    padding: 12px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #fca311;
+    color: #14213d;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #14213d;
+    color: white;
+}
+
+.login-message {
+    color: #14213d;
+}
+
+.login-note {
+    margin: 15px auto 0;
+    color: #555;
+    font-size: 14px;
 }
 
 /* Footer */
@@ -111,6 +243,7 @@ footer {
     color: white;
     text-align: center;
     padding: 35px 20px;
+    animation: fadeIn 0.8s ease-out both;
 }
 
 .copyright {
@@ -122,14 +255,29 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        gap: 15px;
+        position: relative;
+        flex-wrap: wrap;
+        gap: 0;
+        padding: 18px 6%;
+    }
+
+    .menu-toggle {
+        display: block;
+        padding: 4px;
     }
 
     .navbar ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none;
+        flex-direction: column;
+        align-items: center;
         gap: 15px;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navbar.is-open ul {
+        display: flex;
+        padding-top: 18px;
     }
 
     .testimonial-container {
@@ -138,5 +286,109 @@ footer {
 
     .home h1 {
         font-size: 30px;
+    }
+
+    .about,
+    .testimonials,
+    .login-section {
+        padding: 55px 6%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        gap: 10px;
+    }
+
+    .navbar h2 {
+        font-size: 22px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .home {
+        padding: 75px 16px;
+    }
+
+    .home h1 {
+        font-size: 27px;
+    }
+
+    .home p {
+        font-size: 15px;
+    }
+
+    .about,
+    .testimonials,
+    .login-section {
+        padding: 45px 18px;
+    }
+
+    .about h2,
+    .testimonials h2 {
+        font-size: 26px;
+    }
+
+    .testimonial-card {
+        padding: 20px;
+    }
+
+    .login-form {
+        padding: 20px;
+    }
+
+    footer {
+        padding: 30px 16px;
+    }
+
+    footer p {
+        overflow-wrap: anywhere;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }

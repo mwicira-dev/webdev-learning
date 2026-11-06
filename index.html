@@ -14,10 +14,18 @@
     <nav class="navbar">
         <h2>MyWebsite</h2>
 
-        <ul>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu"
+            aria-expanded="false" aria-controls="main-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul id="main-navigation">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#login">Login</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -30,7 +38,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section class="about" id="about">
         <h2>About Us</h2>
 
         <p>
@@ -55,7 +63,7 @@
             <div class="testimonial-card">
                 <p>"Very professional and helpful.
                 Highly recommended!"</p>
-                <h3>Jane Smith</h3>
+                <h3>eloi</h3>
             </div>
 
             <div class="testimonial-card">
@@ -65,6 +73,24 @@
             </div>
 
         </div>
+    </section>
+
+    <!-- Login Demo -->
+    <section id="login" class="login-section">
+        <h2>Login</h2>
+        <form class="login-form">
+            <label for="login-email">Email</label>
+            <input id="login-email" name="email" type="email"
+                placeholder="you@example.com" autocomplete="email" required>
+
+            <label for="login-password">Password</label>
+            <input id="login-password" name="password" type="password"
+                placeholder="Enter your password" autocomplete="current-password" required>
+
+            <button type="submit">Login</button>
+            <p class="login-message" role="status" aria-live="polite"></p>
+        </form>
+        <p class="login-note">Learning demo only. It does not sign you in or save your details.</p>
     </section>
 
     <!-- Footer -->
@@ -77,9 +103,55 @@
             &copy; 2026 MyWebsite. All rights reserved.
         </p>
     </footer>
+    <script>
+        const navbar = document.querySelector(".navbar");
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navigation = document.querySelector("#main-navigation");
+
+        function closeMenu() {
+            navbar.classList.remove("is-open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+        }
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navbar.classList.toggle("is-open");
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+        });
+
+        navigation.addEventListener("click", (event) => {
+            if (event.target.closest("a")) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && navbar.classList.contains("is-open")) {
+                closeMenu();
+                menuToggle.focus();
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+        });
+
+        const loginForm = document.querySelector(".login-form");
+        const loginMessage = document.querySelector(".login-message");
+
+        loginForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            loginMessage.textContent =
+                "This is a demo: no account was checked and no details were saved.";
+            loginForm.reset();
+        });
+    </script>
 
 </body>
 </html>
-
-  <a href="#about">About</a>
-  
